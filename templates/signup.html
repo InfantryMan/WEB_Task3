@@ -1,0 +1,47 @@
+{% extends "base_unregistered.html" %}
+
+{% block content %}
+
+<div class="col-12 col-md-9">
+        <h2>Registration</h2>
+        <h8 style="color: red">Sorry,this email address already registered!</h8>
+        <br><br>
+
+        <form action="" method = GET class="register_form">
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <input type="text" class="form-control" id="login" placeholder="EvilArthas">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="EvilArthas@mail.ru">
+                </div>
+
+                <div class="form-group">
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" class="form-control" id="nickname" placeholder="EvilArthas">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="******">
+                </div>
+
+                <div class="form-group">
+                    <label for="repeat-password">Repeat password:</label>
+                    <input type="password" class="form-control" id="repeat-password" placeholder="******">
+                </div>
+
+                <div class="form-group">
+                    <label for="path">Upload avatar:</label>
+                    <input type="text" id="path" class="form-control aye" placeholder="c:\avatar.jpg">
+                    <button type="button" class="btn btn-primary-outline">Choose</button>
+                </div>
+                <input type = submit value = "Register!" class = "btn btn-success ask-button-down">
+        </form>
+</div><!--/span-->
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base_registered.html" %}
+
+{% block content %}
+
+<div class="col-12 col-md-9">
+    <div class="row">
+        <div class="col-lg-2">
+            <h2>Settings:</h2>
+        </div>
+        <div class="col-lg-3 name-of-user">
+            <h2>Dr. Pepper</h2>
+        </div>
+    </div><!--/row-->
+    <form action="" method = GET class="settings_form">
+
+        <div class="form-group">
+            <label for="login">Login:</label>
+            <input type="text" class="form-control" id="login" placeholder="EvilArthas">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="EvilArthas@mail.ru">
+        </div>
+
+        <div class="form-group">
+            <label for="nickname">Nickname:</label>
+            <input type="text" class="form-control" id="nickname" placeholder="EvilArthas">
+        </div>
+
+        <div class="form-group">
+            <label for="avatar">Upload avatar:</label>
+            <img class="avatar" src="/static/img/papich.jpg" alt="avatar">
+        </div>
+
+        <div class="form-group">
+            <label for="path"></label>
+            <input type="text" id="path" class="form-control aye" placeholder="c:\avatar.jpg">
+            <button type="button" class="btn btn-primary-outline">Choose</button>
+        </div>
+
+
+        <input type = submit value = "Save" class = "btn btn-success ask-button-down">
+
+    </form>
+</div>
+
+{% endblock %}

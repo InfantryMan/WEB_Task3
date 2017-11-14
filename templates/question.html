@@ -1,0 +1,100 @@
+{% extends "base_unregistered.html" %}
+
+{% block content %}
+
+<div class="col-12 col-md-9">
+    <!--Question-->
+    <div class="question">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#">
+                    <img class="avatar" src="/static/img/papich.jpg" alt="avatar">
+                </a>
+                <div class ="like">
+                    <div class="like-counter">
+                    5
+                    </div>
+                    <div class="top-down">
+                        <a href="#"><div id="triangle-up"></div></a>
+                        <a href="#"><div id="triangle-down"></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h4>Why so serious? Question id: {{ question_id }}</h4>
+                    <div class="question-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor odio arcu, eu vestibulum est eleifend ac. Duis elit nulla, blandit in hendrerit eu, luctus ut lorem. Aenean rhoncus placerat metus nec aliquet. Nunc non sagittis dui. Aenean iaculis elementum magna at vestibulum. Nullam vel porttitor neque.
+                    </div>
+                    <div class="tag">
+                        Tags:
+                            <a href="#">YouTube</a>
+                            <a href="#">VK</a>
+                            <a href="#">FaceBook</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <hr width="90%" align="left">
+    <!--Answers-->
+    <div class="answer">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#">
+                    <img class="avatar" src="/static/img/papich.jpg" alt="avatar">
+                </a>
+                <div class ="like">
+                    <div class="like-counter">
+                    5
+                    </div>
+                    <div class="top-down">
+                        <a href="#"><div id="triangle-up"></div></a>
+                        <a href="#"><div id="triangle-down"></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h4>Why so serious?</h4>
+                    <div class="answer-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor odio arcu, eu vestibulum est eleifend ac.
+                    </div>
+                    <label class="checkbox-inline"><input class="correct" type="checkbox" value="">  Сorrect!</label>
+            </div>
+        </div>
+    </div>
+    <div class="answer">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#">
+                    <img class="avatar" src="/static/img/papich.jpg" alt="avatar">
+                </a>
+                <div class ="like">
+                    <div class="like-counter">
+                    5
+                    </div>
+                    <div class="top-down">
+                        <a href="#"><div id="triangle-up"></div></a>
+                        <a href="#"><div id="triangle-down"></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h4>Why so serious?</h4>
+                    <div class="answer-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor odio arcu, eu vestibulum est eleifend ac.
+                    </div>
+                    <label class="checkbox-inline"><input class="correct" type="checkbox" value="">  Сorrect!</label>
+            </div>
+        </div>
+    </div>
+    <hr width="90%" align="left">
+    <!-- /Answers -->
+    <!-- Enter Answer -->
+    <div class="form-group">
+        <div class="noname">
+            <textarea class="form-control" rows="5" name="text" placeholder="Enter you answer here:"></textarea>
+        </div>
+    </div>
+    <a class="btn btn-primary btn-md" href="#">Answer<span class="sr-only">(current)</span></a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base_unregistered.html" %}
+
+{% block content %}
+<div class="col-md-9">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>New Questions</h2>
+                </div>
+                <div class="col-lg-3 hot-questions">
+                    <a href="{% url 'hot' %}">Hot Questions</a>
+                </div>
+            </div>
+        </div>
+    </div><!--/row-->
+
+    {% for question in questions %}
+    <!-- One question -->
+    <div class="one-question">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="#">
+                    <img class="avatar" src="/static/img/papich.jpg" alt="avatar">
+                </a>
+                <div class ="like">
+                    <div class="like-counter">
+                        5
+                    </div>
+                    <div class="top-down">
+                        <a href="#"><div id="triangle-up"></div></a>
+                        <a href="#"><div id="triangle-down"></div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4><a href="{% url 'question' question.id %}">{{ question.id }}. {{ question.title }}</a></h4>
+                <div class="question-text">
+                    {{question.text }}
+                </div>
+                <div class="answers-and-tags">
+                    <div class="answer-button">
+                        <a href="#">answer(3)</a>
+                    </div>
+                    <div class="tag">
+                        Tags:
+                        <a href="#">YouTube</a>
+                        <a href="#">VK</a>
+                        <a href="#">FaceBook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    <!-- /One question-->
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if questions.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ questions.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="?page={{ questions.previous_page_number }}">{{ questions.previous_page_number }}</a></li>
+            {% endif %}
+            <li class="page-item active"><a class="page-link" href="#">{{ questions.number }}</a></li>
+            {% if questions.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ questions.next_page_number }}">{{ questions.next_page_number }}</a></li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ questions.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div><!--/span-->
+{% endblock %}

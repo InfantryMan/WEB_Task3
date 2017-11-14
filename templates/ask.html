@@ -1,0 +1,29 @@
+{% extends "base_unregistered.html" %}
+
+{% block content %}
+<div class="col-md-9">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>New Question</h2>
+            <form action="" method = GET class="question_form">
+
+                <div class="form-group">
+                    <label for="usr">Title:</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter your title">
+                </div>
+
+                <div class="form-group">
+                    <label for="text">Text:</label>
+                    <textarea class="form-control" rows="5" name="text" placeholder="Enter your text"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="usr">Tag:</label>
+                    <input type="text" class="form-control" id="tag" placeholder="Enter your tag">
+                </div>
+                <input type = submit value = "Ask" class = "btn btn-primary btn my-2 my-sm-0 ask-button-down">
+            </form>
+        </div><!--/span-->
+    </div><!--/row-->
+</div><!--/span-->
+{% endblock %}

@@ -1,0 +1,467 @@
+body {
+	background-color: #EEEEEE;
+  font-family: 'Catamaran', sans-serif;
+}
+
+input [type="text"] {
+   width: 70%; 
+   color: #cccccc; 
+   font-size: 11px; /
+}
+
+.ask-button-top {
+    display: flex;
+    align-items: center;
+}
+/* */
+#header-wrapper {
+    background: #343a40;
+    min-width: 976px;
+    margin-bottom: 10px;
+}
+
+#header {
+    width: 1076px;
+    height: 51px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header .site-name {
+    font-size: 25px;
+    line-height: 1em;
+    float: left;
+    padding-top: 13px;
+    margin-right: 20px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+#header .search {
+    height: 51px;
+}
+
+.search button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#header .dropdown-user {
+    min-width: 89px;
+    height: 51px;
+    right: 0px;
+    float: right;
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    background: #343a40;
+}
+
+.nav.nav-main {
+    float: left;
+}
+
+.nav-link {
+  align-items:  center;
+}
+
+.sign-in-register {
+  align-items: center; 
+  display: flex;
+}
+
+.sign-in-register .nav-link {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+#container {
+    width: 1076px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+/* */
+
+/* == Sign In and Register buttons == */
+
+
+
+/* == User bar == */
+
+.dropdown-user-registered {
+  position: relative;
+  height: 40px;
+  background: #404040;
+  padding-left: 54px;
+  float: right;
+  align-items: center;
+  margin-top: 5.5px;
+  width: 170px;
+}
+
+.dropdown-user-registered .avatar {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown-user-registered .full_name {
+    min-width: 100px;
+    position: relative;
+    top: 18%;
+    transform: translateY(-25%);
+    line-height: 15px;
+}
+
+.dropdown-user-registered .username {
+    color: #cfcfcf;
+    font-size: 11px;
+    text-decoration: underline;
+
+}
+
+.dropdown-user-registered .account-actions {
+  position: relative;
+  padding: 0px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+  width: 50px;
+}
+
+.dropdown-user-registered .log-out {
+  float: right;
+  top: -22px;
+  text-align: center;
+}
+
+/* == Popular Tags ==*/
+.first-tag {
+  font-size: 30px;
+  color: red;
+  padding-right: 5px;
+}
+
+.second-tag {
+  font-size: 25px;
+  color: green;
+  padding-right: 5px;
+}
+
+.third-tag {
+  font-size: 20px;
+  color: orange;
+  padding-right: 5px;
+}
+
+.other-tag {
+  font-size: 17px;
+  color: black;
+  padding-right: 5px;
+}
+
+/* == Best members ==*/
+.member {
+  line-height: 30px;
+  text-decoration: underline;
+
+}
+
+/* == Offset from the navigation bar ==*/
+
+.additional-offset {
+  padding-top: 20px;
+  right: 0px;
+}
+
+/* == Question form == */
+
+.question_form label {
+  display: inline-block; 
+  width:150px;
+  margin-top: 3px;
+  float: left;
+}
+
+.form-control {
+  width: none;
+  width: 60%;
+}
+
+.ask-button-down {
+  margin-left: 150px;
+}
+
+/* == Index.html == */
+
+.hot-questions {
+  text-align: left;
+  text-decoration: underline;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.one-question {
+  position: relative;
+  border: 3px grey outset;
+  background: silver;
+  height: 135px;
+  width: 80%;
+  margin-bottom: 20px;
+  padding:10px;
+}
+
+.one-question .avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.one-question .like {
+  margin-top: 15px;
+}
+
+.like-counter {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+  float: left;
+}
+
+.top-down {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  padding: 2px;
+  text-align: center;
+  border-top:  1px solid black;
+  border-right:  1px solid black;
+  border-bottom:  1px solid black;
+  float:left;
+}
+
+.top-down a:first-child {
+  position: relative;
+  height:8px; 
+  display: inline-block;
+  top: -10px;
+}
+
+.top-down a:last-child {
+  position: relative;
+  height:8px; 
+  display: inline-block;
+  bottom: 18px;
+}
+
+#triangle-up { 
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid black; 
+}
+
+#triangle-down { 
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent; 
+  border-right: 7px solid transparent; 
+  border-top: 7px solid black; 
+}
+
+.one-question .question-text {
+  font-size: 1rem;
+  height: 3rem;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.one-question .answers-and-tags {
+  font-size: 0.9rem;
+  height: 1.5rem;
+}
+
+.one-question .answers-and-tags .answer-button {
+  position: relative;
+  float: left;
+  width: 30%;
+}
+
+.one-question .answers-and-tags .tag {
+  position: relative;
+  right: 15%;
+  float: right;
+}
+
+.number-of-pages {
+  width: 50%;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.number-of-pages .one-page {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid black;
+  position: relative;
+  float:left;
+  margin-right: 10px;
+}
+
+/* == Страница одного вопроса - question.html == */
+
+.question {
+  position: relative;
+  width: 90%;
+  height: auto;
+  padding: 10px;
+}
+
+.question .avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.question .like {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.question .question-text {
+  font-size: 1rem;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.question .tag {
+  font-size: 1rem;
+  height: 1.5rem;
+}
+
+.answer {
+  position: relative;
+  width: 90%;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  border: 2px black solid;
+  margin-bottom: 20px;
+}
+
+.answer .avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.answer .like {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.answer .like-counter {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+  float: left;
+}
+
+.answer .top-down {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  text-align: center;
+  border-top:  1px solid black;
+  border-right:  1px solid black;
+  border-bottom:  1px solid black;
+  float:left;
+}
+
+.answer .answer-text {
+  font-size: 1rem;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.answer .correct {
+  padding-top: 3px !important;
+}
+
+.noname {
+
+}
+
+.noname .form-control {
+  width: 90%;
+}
+
+/* == Листинг вопросов по тэгу tag.html == */
+
+.name-of-tag {
+  margin-bottom: 16.8px;
+  margin-left: 10px;
+}
+
+/* == Настройки профиля settings.html == */
+
+.name-of-user {
+  margin-bottom: 16.8px;
+  margin-left: 10px;
+}
+
+.settings_form label {
+  display: inline-block; 
+  width:150px;
+  margin-top: 3px;
+  float: left;
+}
+
+.settings_form .avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.aye  {
+  width: 40% ;
+  float: left;
+  margin-right: 10px;
+}
+
+/* == Логин login.html == */
+
+.login_form label {
+  display: inline-block; 
+  width:150px;
+  margin-top: 3px;
+  float: left;
+}
+
+.create-new-account {
+  margin-left: 150px;
+}
+
+/* == Регистрация register.html == */
+
+.register_form label {
+  display: inline-block; 
+  width:150px;
+  margin-top: 3px;
+  float: left;
+}
