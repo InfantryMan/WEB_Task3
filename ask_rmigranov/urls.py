@@ -23,7 +23,6 @@ urlpatterns = [
     url(r'^hot/$', views.index, name = 'hot'),
     url(r'^tag/(?P<tag_name>\w+)/$', views.tag, name = 'tag'),
     url(r'^question/(?P<question_id>[0-9]+)/$', views.question, name = 'question'),
-
     url(r'^signup/$', views.signup, name = 'signup'),
 #    url(r'^hello/', views.hello),
     url(r'^ask/$', views.ask, name = 'ask'),
