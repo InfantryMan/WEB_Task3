@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get_post</title>
+</head>
+<body>
+    <p>Метод: {{ method }};</p>
+    Параметры:
+    {% for k, v in parameters.iteritems %}
+        {{ k }}={{ v }}
+    {% endfor %}
+</body>
+</html>

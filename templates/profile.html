@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="askme-containter">
+    <div class="row">
+        <div class=""col-6">
+            <legend>Profile</legend>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="file" name="avatar" class="form-control-file" />
+
+                </div>
+                <button
+                    type="submit" class="btn btn-success">Save
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
