@@ -11,19 +11,21 @@
             </div>
         </div>
     </div><!--/row-->
-
-    {% for question in questions %}
+{% for question in questions %}
     <!-- One question -->
     <div class="one-question">
         <div class="row">
             <div class="col-md-2">
                 <a href="#">
                     {% load static %}
-                    <img class="avatar" src="{% static "img/papich.jpg" %}" alt="avatar">
+                    <img class="avatar" src="{{ question.profile.avatar.url }}" alt="avatar">
                 </a>
+                <div>
+                    {{ question.profile.user.username }}
+                </div>
                 <div class ="like">
                     <div class="like-counter">
-                        5
+                        {{ question.likeCount }}
                     </div>
                     <div class="top-down">
                         <a href="#"
@@ -41,20 +43,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <h4><a href="{% url 'question' question.id %}">{{ question.id }}. {{ question.title }}</a></h4>
+            <div class="col-md-10">
+                <a class="question-a" href="{% url 'question' question.id %}">{{ question.id }}. {{ question.title }}</a>
                 <div class="question-text">
-                    {{ question.text }}
+                    {{ question.content }}
                 </div>
                 <div class="answers-and-tags">
                     <div class="answer-button">
-                        <a href="#">answer(3)</a>
+                        Answers: {{ question.answer_set.all.count }}
                     </div>
                     <div class="tag">
                         Tags:
-                        <a href="#">YouTube</a>
-                        <a href="#">VK</a>
-                        <a href="#">FaceBook</a>
+                        {% for tag in question.tag.all %}
+                            <a href="#">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

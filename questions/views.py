@@ -1,19 +1,13 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render
-from django.template.loader import render_to_string #для render_to_string
-
+from django.template.loader import render_to_string
 from urlparse import urlparse
-
-# Create your views here.
-
 from django.views.generic import TemplateView
 from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-#from .forms import ProfileForm
 from django.contrib.auth.models import User
 from django.http import Http404
+from .models import Question, Answer, Tag, Profile, User
 
 class AboutView(TemplateView):
     template_name = "about.html"
@@ -53,81 +47,30 @@ def paginate(request, object_list):
     try:
         object_list = paginator.page(page)
     except EmptyPage:
-        page = paginator.page(paginator.num_pages)
-    return object_list
-
-"""
-def paginate1(object_list, page, size):
-    paginator = Paginator(object_list, size)
-    try:
-        object_list = paginator.page(page)
-    except PageNotAnInteger:
-        object_list = paginator.page(1)
-    except EmptyPage:
         object_list = paginator.page(paginator.num_pages)
     return object_list
-"""
 
 def index(request):
-    questions = []
-    for i in xrange(1, 101):
-        questions.append({
-            'title': 'title' + str(i),
-            'id': i,
-            'text': 'text' + str(i),
-        })
-    page = request.GET.get('page', default=1)
+    try:
+        questions = Question.objects.all()
+    except questions.DoesNotExist:
+        questions = None
     questions = paginate(request, questions)
     return render(request, "index.html", {'questions': questions})
 
-"""
-def index(request):
-    questions = []
-    for i in xrange(1, 101):
-        questions.append({
-            'title': 'title' + str(i),
-            'id': i,
-            'text': 'text' + str(i),
-        })
-    #listing(request, "index.html", {'questions': questions,})
-    paginator = Paginator(questions, 5)
-    page = request.GET.get('page', default=1)
-    try:
-        questions = paginator.page(page)
-    except PageNotAnInteger:
-        questions = paginator.page(1)
-    except EmptyPage:
-        questions = paginator.page(paginator.num_pages)
-    return render(request, "index.html", {'questions': questions})
-"""
-
 def hot(request):
-    questions = []
-    for i in xrange(1, 15):
-        questions.append({
-            'title': 'title' + str(i),
-            'id': i,
-            'text': 'text' + str(i),
-        })
-    page = request.GET.get('page', default=1)
+    questions = Question.objects.get_top()
     questions = paginate(request, questions)
     return render(request, "hot.html", {'questions': questions})
 
 def tag(request, t_name):
-    questions = []
-    for i in xrange(1, 15):
-        questions.append({
-            'title': 'title' + str(i),
-            'id': i,
-            'text': 'text' + str(i),
-        })
-    page = request.GET.get('page', default=1)
+    questions = Question.objects.get_by_tag(t_name)
     questions = paginate(request, questions)
-    return render(request, "tag.html", {'tag_name': t_name,
-                                        'questions': questions})
+    return render(request, "tag.html", {'questions': questions})
 
 def question(request, q_id):
-    return render(request, "question.html", {'q_id': q_id})
+    currentQuestion = Question.objects.get(pk=q_id)
+    return render(request, "question.html", {'question': currentQuestion})
 
 def profile(request):
     return render(request, 'profile.html', {})
@@ -146,18 +89,6 @@ def settings(request):
 
 def static(request):
     return render(request, "example.html", {})
-
-#def listing(request, mytemplate, mymas):
-#    question_list = mymas
-#    paginator = Paginator(question_list, 5)
-#    page = request.GET.get('page', default=1)
-#    try:
-#        questions = paginator.page(page)
-#    except PageNotAnInteger:
-#        questions = paginator.page(1)
-#    except EmptyPage:
-#        questions = paginator.page(paginator.num_pages)
-#    return render(request, mytemplate, {'questions': questions})
 
 #def hello(request):
 #    return render(request, "_hello.html", {})

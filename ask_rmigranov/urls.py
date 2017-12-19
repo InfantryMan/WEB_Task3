@@ -21,10 +21,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^profile/?',                  views.profile),
     url(r'^hot/$',                      views.hot, name = 'hot'),
-    url(r'^tag/(?P<t_name>\w+)/$',      views.tag, name = 'tag'),
+    url(r'^tag/(?P<t_name>\w+\W*)/$',      views.tag, name = 'tag'),
     url(r'^question/(?P<q_id>[0-9]+)/$', views.question, name = 'question'),
     url(r'^signup/$',                   views.signup, name = 'signup'),
-#    url(r'^hello/', views.hello),
     url(r'^ask/$',                      views.ask, name = 'ask'),
     url(r'^login/$',                    views.login, name = 'login'),
     url(r'^settings/$',                 views.settings, name = 'settings'),
